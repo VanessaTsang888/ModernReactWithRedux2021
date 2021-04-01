@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# Modern React with Redux - 2020 Update
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Intro:
+I am currently studying this course to upskill in React.
+
+## How To Run This App
+
+1. You will need Node to install create react app module. Do a global install of the create react app package.
+This will allow you to use create react app from any command line.
+
+```
+$ npm install -g create-react-app
+```
+
+2. Now the module has been create, use it to create a React application:
+
+```
+$ npm create-react-app [ name of project ]
+```
+
+This creates the React project under a folder with the name given above.
+
 
 ## Available Scripts
 
