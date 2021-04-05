@@ -1,4 +1,7 @@
 MY NOTES FOR ALL LECTURES:
+IMPORTANT NOTES:
+1. To run my App I need to be in the correct directory as in the same folder as the node modules and package.json.
+
 
 SECTION 1:
 
@@ -46,7 +49,79 @@ Make use of dependencies called Babel to take my ES6 code and convert to ES5 and
 
 L17: Converting Styling to JSX Format:
 
+L18: Inline Styling with JSX:
 
+Convert HTML to JSX:
+HTML:
+<div style="background-color:red;"></div>
+JSX: JavaScript object
+<div style={{ backgroundColor: 'red'}}></dive>
+
+Update the button tag style property to JSX.
+
+L19: Converting Styling to JSX Format:
+Converted to JSX:
+<button style={{ backgroundColor: 'blue', color: 'white' }}>Submit</button>
+
+Within the btn tag can use dbl quote instead of single as its flexible. Lecture using dbl quotes for all his JSX properties.
+
+L20 Class vs ClassName:
+Adding a calss to an element uses differnt syntax.
+For JSX we not suppose to use class inside of lable tag (we not trying to define a new class) but className as avoid collison of the keyword of class as below:
+ES20 class:
+class App extends React.Component
+
+L21 Referencing JS Variables in JSX:
+JSX can reference JS variales. Take a JS variable and print it inside of our JSX block.
+With a pair of braces we can easily reference different JS variables inside of our JSX. 
+Can be a little more complext i.e:
+
+function getButtonText() {
+    return 'Click on me!';
+}
+
+Then inside of my button tag, I can call this fn.
+
+L22 Values JSX Can't Show:
+What JS variables we can use inside of JSX - limitations.
+The braces used inside of the button tag is NOT to represent a JS object but JS variable.
+Different types of JS Variables we can reference inside of JSX:
+We can reference other types of variables other than a string (i.e. 'Click me'), i.e. a number, or an array of strings or numbers.
+a plain JS object:
+
+const buttonText = { text: 'Click me' };
+
+Will get error msge:
+Objects are not valid as a React child (found: object with keys {text})...
+
+To fix this: use .text inside of the braces to refer to the text property of this object.
+{buttonTest.text}
+
+I want to reference a JS variable for this style within the btn tag. And the value I want to pass-in is this JS object.
+
+L23 Finding Forbidden Property Names:
+
+How to find out some of the differences between HTML and JSX.
+React will look at my different properties that I'm passing to elements inside of my JSX blocks.
+Chrome -> Inspect -> Console -> Warning msg: I'm trying to pass-in an invalid property.
+My label tag has an attribute of 'for' and React don't want to deal with that, wants me to replace it with: htmlFor
+Some browsers or tooling may incorrectly interpret it as traditional JS 'for loop'. 
+Its best practice to keep your Console tab in Inspect open as anytime I see a Warning msg from React like that I should investigate -
+normally means I've accidentally used invalid name somewhere inside of my JSX.
+
+L24 Exercise Intro:
+We printed out some JS variables braces.
+
+The Exercise Editor.
+To solve the problem I only need to change one line of code.
+Read the problem statement at the top. When changed the one line of code, click the Check Solution btn below.
+
+CODING EXERCISE 1: Test our Knowledge: JSX Interpolation:
+ on separate file: L24-CodingEx.jsx
+
+
+L25 Exercise Solution:
+I changed the h3 tag code to display the current time by calling the 'getTime' fn using a pair of braces syntax.
 
 
 
