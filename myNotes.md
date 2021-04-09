@@ -123,5 +123,54 @@ CODING EXERCISE 1: Test our Knowledge: JSX Interpolation:
 L25 Exercise Solution:
 I changed the h3 tag code to display the current time by calling the 'getTime' fn using a pair of braces syntax.
 
+SECTION 3:
+L26 Three Tenets of Components:
+3 Tenets of the React Ecosystem and they going to govern how we design React apps.
+
+Component Nesting:
+A component can be shown inside of another.
+
+Component Resuability:
+We want to make components that can be easily reused through out app.
+
+Component Configuration:
+We should be able to configure a component when it is created.
+
+_________
+
+Component Nesting:
+For React app we normally make many different components when we make many different components. We then nest them to make an actual usable React app.
+For example, we may need to customise two different button that look the same but they need to do different things?
+
+L27 Application Overview:
+Develop a small app to show what the above different terms mean.
+See the mockup and then generate a new project to build this small app.
+
+Mockup:
+Make a couple of React Components that are going to generate what looks like a list of comments - a blog post or a song or a news article.
+Need to make sure we can display: image, date/time posted, the comment text. All 3 comments look very similar. The only difference is in the
+text: different name, date/time, content for each comment. All styling looks almost identical.
+JSX that will make a list of comments that looks like the mockup.
+We start with developing in a non best practice way then do the opposite - create separate Components = Best Practice way.
+
+Now generate a new project:
+
+$ create-react-app components
+
+L28 Semantic UI CDN Link:
+Put in our index.html file:
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+L29 Getting Some Free Styling:
+Change into the new project directory (components), then start up my React server with:
+$ npm start
+
+
+
+
+
+
+
+
 
 
