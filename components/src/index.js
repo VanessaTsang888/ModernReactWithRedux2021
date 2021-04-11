@@ -1,25 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import faker from 'faker';
+import CommentDetail from './CommentDetail';
 
 // Replace the text inside of the div with the list of comments:
+// Use props to configure the CommentDetail JSX tags:
 const App = () => {
     return (
         <div className="ui container comments">
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
-                </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 6:00pm</span>
-                    </div>
-                    <div className="text">Nice blog post</div>
-                </div>
-            </div>
+            <CommentDetail author="Sam" />
+            <CommentDetail author="alex" />
+            <CommentDetail author="Jane" />
         </div>
     );
 };

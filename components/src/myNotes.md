@@ -56,5 +56,56 @@ appear. If I get an broken img then just refresh the page and will get an new on
 
 L32 Duplicating a Single component:
 
+Make reusable components by duplicating the comment div and refresh the screen. We need to refactor these 3 sets of code into separate components
+and customise each of them - see next section.
+
+L33 Extracting JSX to New Components:
+To make reusable, configurable component.
+
+1. Identify the JSX that appears to be duplicated.
+2. What is the purpose of that block of JSX? Think of a descriptive name for what it does.
+3. Create a new file to house this new component - it should have the same name as the component.
+4. Make the new component configureable by using React's 'props' system.
+
+The purpose of each JSX block is to display details about a single comment of a blog post.
+
+L34 Component Nesting:
+Show one component inside of another.
+We want to render get the CommentDetail component inside of our app by making sure the CommentDetail component is available inside the index.js file:
+Write export statement inside of CommentDetail.js file. This will make CommentDetail.js availabe to every other file inside of our project and to get
+access to that we going to add an import statement to the index.js file to form an actual link between these 2 files. Inside the single quotes write
+the relative path reference to the file that we are trying to import, which is in the same directory or same folder.
+
+Tell the App fn to render the CommentDetail component: JSX tag:
+            <CommentDetail />
+Refresh browser to test out.
+
+L35 React's Props System:
+Component Hierarcy: child components.
+We'll use the props system to customise the comment details when they render on the UI.
+
+PROPS (properties):
+System for passing data from a parent component to a child component (or a nested component). Goal is to customise or configure a child component.
+Our App component will show instances of the CommentDetail, at sametime it will pass in a little bit of configuration (props) to each of those different
+common components. Need to customise the date/time and the content as well.
+The parent customise how the child looks or behaves.
+
+L36 Passing and Receiving Props:
+Passing data from a parent to a child.
+A child cannot pass data back up to parent through the system directly (can kind of do it indirectly).
+
+2 Stages:
+1. Provide info from parent to child
+2. The child consumes or makes use of that info.
+
+Providing props info /props from parent to child:
+
+<CommentDetail author= "Sam" />
+When we provide a prompt to a component it's always going to be a unique version of that component.
+
+Continue from 3:35
+
+
+
 
 
