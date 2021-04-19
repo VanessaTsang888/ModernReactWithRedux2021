@@ -103,7 +103,117 @@ Providing props info /props from parent to child:
 <CommentDetail author= "Sam" />
 When we provide a prompt to a component it's always going to be a unique version of that component.
 
-Continue from 3:35
+Chrome -> inspect -> Console: 3 instances of the CommentDetail
+Key is the author or name of the prop that we provided inside the app;
+Value is the individual name that we provided to wach of those common details.
+To consume this prop in Comment Detail.
+The author property is inside of the props, take that author's name and put inside the anchor tag.
+
+L37 Passing and Receiving Props:
+
+Customise time and blog content trhough props system.
+
+index.js -> JSX: CommentDetail -> key value pair:
+Property name: timeAgo
+Value: Today at 4:45pm
+
+Reference a JS variable use this syntax:
+{ props.timeAgo }
+
+Task:
+Pass Comment text from the parent and the image source from the parent as well.
+
+L38 Passing Props - Solutions:
+Pass basic info from a parent to a child:
+
+        <div className="ui container comments">
+            <CommentDetail
+                author="Sam"
+                timeAgo="Today at 4:45pm"
+                content="Nice blog post"
+            />
+
+// render some content
+{ props.content }
+
+Extract the image url as well:
+a reference to a JS variable: will generate a new link to an image and assign it to the Avator Prop that's going to be passed down to the comment detail:
+The key is Avatar.
+avatar={ faker.image.avatar() }
+
+L39 Component Reuse:
+
+Take each of the different comments and wrap in to an Approval Card. this is common for blog platforms. Due to spam posts, we can give authors the ability to audit them by approve or reject comments before they get added to an actual blog. Develop an ApprovalCard with 2 btn at the bottom.
+
+Leave the CommentDetail.js as it is.
+Create new file and call it: ApprovalCard.js -> not going to hard code it to always to show CommentDetail as we'll different content inside of it besides
+the CommentDetail.
+
+The props system we'll use to sub-out the main content itself.
+
+L40 Implement an Approval Card:
+
+create new file called ApprovalCard.js. Inside of that create new component called ApprovalCard
+
+Borrow some styling from the semantic UI library so I don't need to worry about coding the CSS:
+https://semantic-ui.com/views/card.html
+
+left-bar -> scroll down and click Card -> Cards: A group of cards. This is what we want to build. click on the code icon < >
+Copy the HTML. The main content will go inside this div tag:
+<div className="content"></div>
+
+Show the ApprovalCard component inside of the App: index.js
+Inside of the App function -> inside of the: ui container comments div tag -> write this custom tag: <ApprovalCard />
+At the top of the file, write this import statement:
+import ApprovalCard from './ApprovalCard';
+
+Done, see my screenshot.
+
+L41 Showing Custom Children:
+We don't want to hard code the ApprovalCard to 100% of the time to show the CommentDetail component as sometimes we want to show some
+text instead. We going to make use of a little feature in the prop's system again.
+The key and property inside of the CommentDetail tag we've used but there is another way we can communicate info into some child component.
+We have ApprovalCard as a self-closing tag. Update this so its no longer a self-closing tag.
+<ApprovalCard></ApprovalCard>
+Communicate the CommentDeail down to the ApprovalCard and tell ApprovalCard we want to show the CommentDeail.
+So we are taking the CommentDetail and passing it as a prop down into ApprovalCard. The CommentDetail is also a prop aswell as we are providing
+some configs to the ApprovalCard.
+
+Every function that we put together receives a first argument that we refer to as props.
+When we do a console log on the props argument in the ApprovalCards function, and go to: Inspect -> Console: we see a props object has a
+single property inside of it called children which is our CommentDetail component
+This how we make reuseable components.
+
+Challenge:
+Take the ApprovalCard component from the index.js file and use it to both our other comment detals as well in the same file.
+
+L42 Components Reuse:
+
+I've wrapped the other  2 comment details with an ApprovalCard element.
+We can now reuse the <ApprovalCard> component for any other purpose we want. Don't need to pass-in an React component
+to this, we put in plain text or standard JSX as well. In addition we can render multiple elements inside of here.
+The parent component we can provide as many elements as we wish or we can render a single component if we wish?
+
+
+L43 Exercise - Props:
+
+Completed and shown in the Exercises.js file.
+
+It renders: Atention!
+We did an update
+
+I've checked my solution and its correct.
+
+L44 Props Exercise - Solution:
+
+
+
+
+
+
+
+
+
 
 
 
