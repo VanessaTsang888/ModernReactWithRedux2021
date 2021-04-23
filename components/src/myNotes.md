@@ -205,6 +205,132 @@ We did an update
 I've checked my solution and its correct.
 
 L44 Props Exercise - Solution:
+I've made the Message component more useful using a set of braces. See Exercises.js file.
+
+Code:
+in the App component:
+<Message header="Atention!" text="We did an update" />
+
+In the Message component with props passed-in as an argument:
+
+                <div className="header">{props.header}</div>
+                <p>{props.text}</p>
+
+Output:
+Atention!
+We did an update
+
+L45 Exercise - Children:
+Test Your Knowledge: Children Through Props:
+
+Background:
+UI: two segments using same CSS. The child is the first segment.
+
+The Brief:
+Take a look at the code below. The App is showing two separate groups of elements. Notice how there is one element that is giving both these
+groups the nice grey background - it is the <div className="ui placeholder segment"><div>.
+
+My Goal:
+1. Create a new reusable compoenent called Segment that takes some child elements and shows them inside of a div with classNames of
+ ui placeholder segment.
+2. Refactor the App to use this new Segment component.
+
+Hint:
+Extract just the segment portion or just the thing that's giving us that styling into a separate component.
+Code from line 5 - 11 into a new component. Render some children inside this new component. We reference props.children
+
+Completed and shown in the Exercises.js file.
+
+L46. Children Exercise Solution:
+
+Completed and in separate file: Exercises.js
+
+SECTION 4: Structuring Apps with Class-Based Components:
+
+L47. Class-Based Components;
+
+How React Used to Be:
+
+Functional Components:
+Can produce JSX to show content to the user.
+
+Class Components:
+Can produce JSX to show content to the user.
+Can use the Lifecycle Method system to run code at specific points in time.
+Can use the 'State' system to update content on the screen.
+
+How React Is Now:
+Now Functional Components has advanced overtime - the Hooks system.
+
+Class Components:
+
+1. Can produce JSX to show content to the user <-> Can produce JSX to show content to the user: Hooks System - Function Components.
+2. Can use the Lifecycle Method system to run code at specific points in time <-> Can use Hooks to run code at specific points in time: Hooks System - Function Components.
+3. Can use the 'state' system to update content on the screen <-> Can use Hooks to access state system and update content on screen: Hooks System - Function Components.
+
+With this Hooks system the React team has given many more capabilities to function components and though the use of this system, function components can now execute code at specific points in time, which is quivalent to the lifecycle method system tied to class components. In addition function components
+can make use of the state system. So today with React function components are similar to class components as they have similar capabilities.
+
+Companies with established projects are using Class-based components.
+Companies with newer project many be using Class-based or Function-based components.
+I need to understand both class components and function components with the Hooks system. I have to know both different approaches.
+
+Example: dashboard.stripe.com/test/dashboard
+This React website only uses Functional Components and there are many of them.
+I can filter via class-components: inspect -> Components: I can see there are many of them in-use.
+So they still use both functional and class components. This proves to me that I need to understand both.
+
+How To Learn:
+Learn Class Components -> Learn Hooks -> Learn Redux.
+
+L48. Class-Based Components:
+
+Going to build an app that will help me understand how class based components work, how state works, how lifecycle methods work.
+An app that is going to detect what season the user is currently experiencing outside in the real world.
+
+If the user is location in the northen hemisphere that means we have actually, we have to detect our users physical location when they visit our app.
+If our user are in the northen hemisphere and its between Oct and March then it's probably going to be winter. Then render to ui: Burr, it's chilly!
+And show some snow flake icons.
+
+If the user is located in the southern hemisphere when they are visiting our app and the month is between March and October, its winter for them too.
+Then render to ui: Durr, it's chilly!
+
+If our user are in the northen hemisphere and its between March and Oct then render: Let's hit the beach!
+So essentially we're just detecting what season it is based on the user's locatio and their current month it is. Render different conent based on that.
+
+App Challenges:
+1. Need to get the users physical location
+2. Need to determine the current month
+3. Need to change text and styling based on location + month.
+
+Somehow in the browser we need to detect what the users physical location is.
+Somehow determin the current month -> JS has APIs that can determin current date and time and getting the month.
+Change text and some styling on screen based on the location and the month combined together. 
+
+Create new app use command: create-react-app seasons
+
+L49 Scaffolding the App:
+
+Change into the new seasons directory: cd seasons
+Start up my development server inside there with: npm start
+Now I see the default React app on my screen.
+VSCode -> seasons project -> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
