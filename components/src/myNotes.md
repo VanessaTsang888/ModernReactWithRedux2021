@@ -13,8 +13,11 @@ On that web page go to: view -> Comments -> list of comments.
 Install semantic ui. 
 
 https://cdnjs.com/libraries/semantic-ui/0.16.0
-
+A public version that I can use in my project for free:
 https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.0/css/semantic.min.css
+Add this link to: public -> index.html -> head tag: write this code then past the link inside of the href double quotes:
+<link rel="stylesheet" href="" />
+Save the file.
 
 To check if semantic.min.css has been installed:
 Chrome -> Inspect -> Network -> CSS: first check-box is: semantic.min.css

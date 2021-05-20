@@ -1,6 +1,32 @@
-# Getting Started with Create React App
+# Blog Posts Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Getting Started with Create React App. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## About
+
+This Blog Posts web application is created uses the JavaScript library React.js
+
+In this application there is some components that generates some blog posts. Each blog post has an image, the users name in bold, the time which the comment was posted and the the conent (comment text).
+
+Each blog gives the author the ability to approve or reject a comment from a user - auditing.
+
+To customise how content gets rendered  to the screen (UI) and to customise how the user interactions with this web app, I used the three concepts of commponents within the React Ecosystem
+
+**Components Nesting (Props System):**
+
+This is how we can nest components inside of each other, i.e. passing data from parent component to a child component. Then I can configure and customise the child component to how it should look or behave.
+
+**Components Reusability:**
+
+I want to. make components that can easkily be reused through out this app. Therefore, I created the ApprovalCard component as the parent component so that I can reuse this component which takes in a child component i.e. the CommentDetail component. My child component can also take just some plain text or standard JSX as don't have to be a React component.
+
+**Components Configuration:**
+
+I create my components so that they can be configures it to cumtomise each card to take a different type of content. This is why you see the first card contains just some plain text and the other cards contains a React Component which is the child componet: 
+
+```
+<CommentDetail />
+```
 
 ## Available Scripts
 
@@ -19,52 +45,34 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## How To Use This App - Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once the App has started, you are presented with a web page that contains four different blog posts. Each post has two buttons for the author to audit the user's comment which is common in blog posts today.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The first post contains a heading and some plain text. The other posts uses the React component called ApprovalCard (the parent) that contains a child component called CommentDetail.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Frameworks, libraries and tools:
 
-### `npm run eject`
+For this App I had used the JavaScript library called React.js. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For the CSS styling of the comments, I used some default styling from an open source CSS Framework:
+ https://semantic-ui.com/views/comment.html
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Then to get this for free, I used the below link within the header tag inside of the index.html file that is located in the public directory/folder:
+https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.0/css/semantic.min.css
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+For the CSS styling of the Approval Card, I used some default styling fromm an open source CSS framework:
+https://semantic-ui.com/views/card.html
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+For the profile images, i used a some fake data from an open source library: https://github.com/marak/Faker.js/
 
-## Learn More
+To use the avatar image API Method, I used this command in your Terminal: 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm install --save faker
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Then inside of the index.js file i had written an import statement to be able to use this library of fake and open source data.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
