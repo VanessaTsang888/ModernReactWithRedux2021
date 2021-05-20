@@ -357,9 +357,32 @@ There are 3 other lifecycle methods but infrequently used:
 
 63. Refactoring Data Loading to Lifecycle Methods:
 
+I have refactored the 'componentDidMount' lifecycle method. Now less lines of code.
 
+64. Alternate State Initialisation:
 
+We discussed that they are 2 ways to initailise our state. In Blog posts you would not see the 'Constructor' function so this alternate method exists.
 
+The code we write here is not what actually shows up inside of our browser as the code we write run through the tool called 'Babille' - converts to JS that can be read by all popular browsers:
+w: babeljs.io
+Click 'Try it out' -> write our code on left, will transpile on the right side.
+
+65. Passing State as Props:
+
+Import the 'SeasonDisplay' into the index.js file and then inside the render method, rather than printing out the latitude, show the 'SeasonDisplay' instead as the goal is to show the current season summer or winter. So at the top of the index.js write the import line of code:
+
+  import SeasonDisplay from './SeasonDisplay';
+
+Create an instance of the SeasonDisplay component: <SeasonDisplay />
+Tell the SeasonDisplay what latitude the user is. Then its up to the SeasonDisplay to figure out whether its summer or winter and adjust its styling appropriately.
+Take our latitude stored in our state object and get that property (value of state) down into the SeasonDisplay component. Use the same prop system used in my Blog Posts Web App.
+So, add on a new 'prop' with a name of simply lat for latitude, assign it a value of: this.state.lat
+so we taken a property from the state on the app component and passing it as a prop down into the SeasonDisplay
+This is where the two systems of props and state start to get a little confusing - we can take state from one component and pass it as a prop down to the child, in this case the <SeasonDisplay />
+
+Now the <SeasonDisplay /> will be closely linked with the App component. Anytime we call the setState inside of the parent component of App and update the lat, the App is going to rerender itself which will cause the <SeasonDisplay /> to be updated as well as if the lat property changes the new lat value is going to be put into <SeasonDisplay /> and <SeasonDisplay /> will be rerendered as well.
+
+Inside the 'SeasonDisplay.js' file, add the props to show the lat.
 
 
 
