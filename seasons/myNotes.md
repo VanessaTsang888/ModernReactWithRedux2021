@@ -384,7 +384,41 @@ Now the <SeasonDisplay /> will be closely linked with the App component. Anytime
 
 Inside the 'SeasonDisplay.js' file, add the props to show the lat.
 
+// check that I have my latitude property down in the 'SeasonDisplay' component which is the child component.
+    console.log(props.lat); 
 
+66. Determining The Season:
+
+Programming is 0 based. Therefore, January is 0, Feb is 1, March is 2 etc. To test this out:
+run this App in Chome, get the DevConsole up, type: new Date().getMonth()
+This will give me my current month which is: 5 as it is currently June as Programming is 0 based.
+
+THE RULES TO OUR CONDITIONAL:
+Northern Hemisphere:
+If user is in the Northern Hemisphere and in a month that is between April (3) and Sept (8), then they are in the Summer Season, see the instructors diagram (inside the orange boxes).
+
+Southern Hemisphere:
+If the user is in the Southern Hemisphere and in a month that is between Jan and March or Oct and Dec, then we going to say its Summer Season for them there.
+
+Use a Ternary Expression.
+If user are in the 'summer months' and are in the Northern Hemisphere, then return 'summer'. Else, return 'winter'.
+Return the result of the Ternary Expression.
+
+Use a Ternary Expression.
+Determin if user are in the months of Jan and Mar, Oct and Dec, Northern Hemisphere or in the Southern Hemisphere, then return the approiate String.
+If months greater than 0 and If user are in the Northern Hemisphere during the winter months, that means they are in winter. Otherwise the user must be in the Southern Hemisphere, which means they are in the summer.
+
+I have tested my seasons app and the string 'Summer' has returned to the UI which is correct. To test further:
+Console -> Sensors -> Location: change to San Francisco, and refresh page. This will change the string from Summer to Winter.
+This didn't work for me as I have error message regarding font issue. See screenshot.
+
+Next lecture, we will do some styling inside of our seasonDisply component.
+
+67. Ternary Expressions in JSX:
+
+Customise how the seasonDisplay component looks depending if user is in Summer or Winter months. The string and icons will change depending upon the season.
+
+1. The text to return on screen depending on the season the user is in:
 
 
 
