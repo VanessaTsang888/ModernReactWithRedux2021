@@ -36,8 +36,15 @@ console.log(props.lat);
 
 const SeasonDisplay = props => {
     const season = getSeason(props.lat, new Date().getMonth());
-    console.log(season);
-    return <div>Season Display</div>;
+    // Assigned the season variable (that is a Ternary expression) to the newly declared text variable.
+    // Determin the text ahead of time. Then reference it inside the JSX. 
+    const text = season === 'Winter' ? 'Burr, it is chilly' : 'Lets hit the beach';
+    // Refer to variable: text inside of the component as JSX code which will be either the Winter string or Summer string.
+    return (
+        <div>
+            <h1>{text}</h1>
+        </div>
+    );
 };
 
 export default SeasonDisplay;

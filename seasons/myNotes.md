@@ -387,7 +387,7 @@ Inside the 'SeasonDisplay.js' file, add the props to show the lat.
 // check that I have my latitude property down in the 'SeasonDisplay' component which is the child component.
     console.log(props.lat); 
 
-66. Determining The Season:
+66. Determining The Current Season:
 
 Programming is 0 based. Therefore, January is 0, Feb is 1, March is 2 etc. To test this out:
 run this App in Chome, get the DevConsole up, type: new Date().getMonth()
@@ -419,6 +419,12 @@ Next lecture, we will do some styling inside of our seasonDisply component.
 Customise how the seasonDisplay component looks depending if user is in Summer or Winter months. The string and icons will change depending upon the season.
 
 1. The text to return on screen depending on the season the user is in:
+Either 'Durr, it's chilly!' or 'Let's hit the beach!'
+
+2. The icons will change depending on the season: snow flake or sun.
+
+First get the text on the screen.
+Make the text large by wrapping the JSX in a pair of h1 tag.
 
 
 
