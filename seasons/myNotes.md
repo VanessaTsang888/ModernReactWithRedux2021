@@ -426,6 +426,85 @@ Either 'Durr, it's chilly!' or 'Let's hit the beach!'
 First get the text on the screen.
 Make the text large by wrapping the JSX in a pair of h1 tag.
 
+68. Icons Not Loading and CORS errors:
+
+In the upcoming lecture, we will be adding some font icons from the Semantic UI library.
+
+There is a CDN bug that some students are hitting where the icons will no longer load and throw a CORS error after changing the browser's location sensors. Another student finally discovered the reason here.
+
+The CDN.js docs add the integrity and crossorigin parameters to your script by default, which is breaking when we change the location sensors.
+
+Change the script to look like this:
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+
+Stop the server and close your browser (if you miss fully closing the browser the error will persist). Then, restart your server.
+
+If this does not resolve your issue, you can also choose to install the CSS library locally:
+
+npm install semantic-ui-css
+
+Then, import the library into your root index.js component:
+
+import "semantic-ui-css/semantic.min.css";
+
+69. Update the SeasonDisplay Component To Show Icons:
+
+Get my app to return icons for Summer and icons for Winter (as per the lectures diagram) using the Semantic UI library to add a little sytling to my app:
+https://semantic-ui.com
+
+Left side-bar: Elements -> Icon -> press 'ctrl + f' and search for: snowflake, then search for: sun.
+
+In the SeasonDisplay component, we want to produce either the sun or snowflake depending on the user's season:
+  season === 'winter' ? 'Burr, it is chilly' : Lets hit the beach';
+
+To do so, make use of similar Ternary Expression as the above:
+// If its winter then return the value of snowflake else return the value of sun.
+  const icon = season === 'winter' ? 'snowflake' : 'sun';
+
+Now we have 2 similar Ternary Expression, it looks a bit repetative. In both cases we have identical ternary just the variable and values are different. Later we can refactor this code.
+
+Will take what ever the value of icon is and put it in the string/template literal to return the icons to the UI.
+
+I have tested my app and I get x2 sun icons which is correct as I'm in one of the Summer months here. Therefore, so far all working fine.
+
+70. Extracting Options to Config Objects:
+
+Refactor the code as we have two duplicated Ternary Expressions (the values are different). We can do a better job in deciding what text and icon to display depending on what season the user is in
+without writing 2 Ternary Expressions. Also, writing icon, icon on one line is a little confusing so need to refactor this too. So we need to update the icon variable name as well.
+
+1. Write a configuration object called: 'seasonConfig' at the top of this file or component, just after the import React statement.
+2. Inside the 'seasonConfig' object, write two 'key value pairs' inside of it: summer object {} and winter object {}
+The first object will tell the App what text and what icon to use if it is summer. The second object will tell the App what text and what icon to use if it is winter.
+
+I've removed this code:
+
+    // Refer to variable: text inside of the component as JSX code which will be either the Winter string or Summer string.
+    // Will take what ever the value of icon (above) is and put it in the string/template literal to return the icons to the UI.
+    // We have the name of the icon. Then the className which is icon. Hence why there is x2 icon on same line.
+
+    // Assigned the season variable (that is a Ternary expression) to the newly declared text variable.
+    // Determin the text ahead of time. Then reference it inside the JSX. 
+    const text = season === 'winter' ? 'Burr, it is chilly' : 'Lets hit the beach';
+
+    const icon = season === 'winter' ? 'snowflake' : 'sun';
+
+71. Adding Some Styling:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
