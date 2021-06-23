@@ -491,9 +491,23 @@ I've removed this code:
 
 71. Adding Some Styling:
 
+A little of acss to improve the design of the app. Go back to the Semantic ui website:
+https://semantic-ui.com
 
 
+<i class="massive home icon"></i>
 
+Use 'massive' in my code:   <i className= { `massive ${iconName} icon` } /> 
+
+Create new file called seasonDisplay.css that will modify the file seasonDisplay.js
+So we can select the appropriate elements and style them appropriately.
+Write the css file to position the icons in the correct place. Then link up the css to the seasonDisplay.js file -> import statement.
+
+Create a className (css version) to indicate if the app should use blue or red/orange colour icon to apply style easily. Use a Expression, use a template string and put in the actual season.
+Make sure the root component has a className (season-display) = to the component name (SeasonDisplay). This will make it easier for me to apply css in the future. So SeasonDisplay component
+will always have a className of season-display.
+
+Change colour of icon depending on the season.
 
 
 

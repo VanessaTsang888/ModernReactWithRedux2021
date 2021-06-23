@@ -1,3 +1,4 @@
+import './SeasonDisplay.css';
 import React from 'react';
 
 /* 
@@ -52,14 +53,15 @@ const SeasonDisplay = props => {
 // To get access to the 2 config objects, we reference them here:
 // Will return the text and the iconName inside of it. Destructure out the text and iconName from seasonConfig at season.
 // Refer to iconName that's in the seasonConfig object.
+// 'massive' is the size from:  https://semantic-ui.com
 
     const { text, iconName } = seasonConfig[season]; 
 
     return (
-        <div>
-            <i className= { `${iconName} icon` } /> 
+        <div className={ `season-display ${season}`} >
+            <i className= { `icon-left massive ${iconName} icon` } /> 
             <h1>{ text }</h1>
-            <i className= { `${iconName} icon` } />
+            <i className= { `icon-right massive ${iconName} icon` } />
         </div>
     );
 };
