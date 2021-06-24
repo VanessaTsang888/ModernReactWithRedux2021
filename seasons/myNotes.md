@@ -1,5 +1,5 @@
 GENERAL NOTES:
-index.js contains the App compenent.
+index.js contains the App compenent so its acting as the App component.
 
 
 SECTION 4: Structuring Apps with Class-Based Components:
@@ -494,6 +494,7 @@ I've removed this code:
 A little of acss to improve the design of the app. Go back to the Semantic ui website:
 https://semantic-ui.com
 
+https://semantic-ui.com/elements/icon.html#/definition
 
 <i class="massive home icon"></i>
 
@@ -508,6 +509,31 @@ Make sure the root component has a className (season-display) = to the component
 will always have a className of season-display.
 
 Change colour of icon depending on the season.
+
+72. Showing a Loading Spinner:
+
+First time UX - the first time user opens the app.
+
+User will see a white page with text: Loading.. on top-left. Then when they click the 'Allow' button they get the season according to their location. We need to developer a better UI for when
+the page is still loading up: user needs to click Block or Allow.
+
+Loader: https://semantic-ui.com/elements/loader.html
+
+Nice spinning icon on black background and text to tell the user 'we are trying to do something here'. This is whilst we get approval to get user's location.
+
+To get that effect, this is the JSX code:
+
+<div class="ui segment">
+  <div class="ui active dimmer">
+    <div class="ui text loader">Loading</div>
+  </div>
+  <p></p>
+</div>
+
+Inside of the src directory, make a new file to create a new functional component. 
+Refresh browser to test this. I've tested and it works as expected.
+
+Next lecture: customise the Spinner and change the text it shows, i.e. Please allow us to read your location so that user knows that they have to do something before the page will load up.
 
 
 

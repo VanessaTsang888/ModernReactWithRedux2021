@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner'
 
 // Make a call to geolocation API, 2 callback fn's: 1. the position callback - the success callback will get called anytime.
 // 2. the Fialure callback: error - will get called anytime that the getCurrentPosition fn is unable to determine the user's physical location.
@@ -45,7 +46,8 @@ class App extends React.Component {
             return <SeasonDisplay lat={ this.state.lat } />
           }
 // If the above 2 checks fail, catch all (normally this would be the 'else' part):
-          return <div>Loading, please wait...</div>;
+// JSX code:
+          return <Spinner />;
       }
   }
   
