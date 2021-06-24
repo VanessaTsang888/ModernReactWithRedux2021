@@ -47,7 +47,8 @@ class App extends React.Component {
           }
 // If the above 2 checks fail, catch all (normally this would be the 'else' part):
 // JSX code:
-          return <Spinner />;
+// New prop of message with a string value. Show default text of Loading message.
+          return <Spinner message="Please accept location request" />;
       }
   }
   

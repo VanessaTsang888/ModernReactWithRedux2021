@@ -535,7 +535,20 @@ Refresh browser to test this. I've tested and it works as expected.
 
 Next lecture: customise the Spinner and change the text it shows, i.e. Please allow us to read your location so that user knows that they have to do something before the page will load up.
 
+73. Specifying Default Props:
 
+Customise the default Loading... text.
+
+Pass some props into Spinner component. In that Spinner component, instead of hard coding the text Loading... we use braces to reference: props.message
+So every time we make use of this component we should make use of this message and that is what will be shown right under the animated spinner.
+
+// Default Props:
+
+Spinner.defaultProps = {
+    message: 'Loading...'
+};
+
+74. Avoiding Conditionals in Render:
 
 
 
