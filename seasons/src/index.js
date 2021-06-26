@@ -32,24 +32,35 @@ class App extends React.Component {
         (err) => this.setState({ errorMessage: err.message })
       );
     }
-
   // RENDER METHOD:
     // React says we have to define render!! This is conditional rendering depending on the State of our component.
     // 2. Call render method again to update our component.
     // errorMessage will render on screen if user has geolocation blocked
-    render() {
-        if (this.state.errorMessage && !this.state.lat) {
-            return <div>Error: { this.state.errorMessage }</div>;
-          }
+// Helper Function called renderContent()
+// All centralised in one location so no matter which case user falls into we'll always going to show the result with a className of a border red.
+    renderContent() {
+      if (this.state.errorMessage && !this.state.lat) {
+        return <div>Error: { this.state.errorMessage }</div>;
+      }
 
-          if (!this.state.errorMessage && this.state.lat) {
-            return <SeasonDisplay lat={ this.state.lat } />
-          }
+      if (!this.state.errorMessage && this.state.lat) {
+        return <SeasonDisplay lat={ this.state.lat } />
+      }
 // If the above 2 checks fail, catch all (normally this would be the 'else' part):
 // JSX code:
 // New prop of message with a string value. Show default text of Loading message.
-          return <Spinner message="Please accept location request" />;
-      }
+      return <Spinner message="Please accept location request" />;
+
+    }
+// Call the renderContent()
+// Then this render method gets called, the border red gets shown, the renderContent gets called, figur what case user is in, and return the appropriate component.
+    render() {
+      return (
+        <div className="border red" >
+          {this.renderContent()}
+        </div>
+      );
+    }
   }
   
   // show an instance of my App component, second argument: a reference to the div with ID of root that's inside of our index.html

@@ -550,7 +550,13 @@ Spinner.defaultProps = {
 
 74. Avoiding Conditionals in Render:
 
+Put all 3 conditional logic into a helper method/function. So when the render method gets called, the border red will get shown, call the renderContent, figur what case user is in, and
+return the appropriate component.
 
+To develop a red keyline on the outer of content no matter what the user's conditional logic (Error, Season or the Spinner), we need to develop a helper function to contain all 3 conditionals/
+the code inside the render method.
+
+Develop a helper function called renderContent, and copy & past the 3 conditionals.
 
 
 
