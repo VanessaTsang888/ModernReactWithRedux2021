@@ -2,6 +2,30 @@ import './SeasonDisplay.css';
 import React from 'react';
 
 /* 
+check that I have my latitude property down in the 'SeasonDisplay' component which is the child component using:
+console.log(props.lat);
+*/ 
+
+const SeasonDisplay = props => {
+    const season = getSeason(props.lat, new Date().getMonth());
+// To get access to the 2 config objects, we reference them here:
+// Will return the text and the iconName inside of it. Destructure out the text and iconName from seasonConfig at season.
+// Refer to iconName that's in the seasonConfig object.
+// 'massive' is the size from:  https://semantic-ui.com
+
+    const { text, iconName } = seasonConfig[season]; 
+
+    return (
+        <div className={ `season-display ${season}`} >
+            <i className= { `icon-left massive ${iconName} icon` } /> 
+            <h1>{ text }</h1>
+            <i className= { `icon-right massive ${iconName} icon` } />
+        </div>
+    );
+};
+
+
+/* 
 seasonConfig object:
 This is refactored from the two Ternary Expressions that I had written before as a lot of the code was duplicated within them and not efficent.
 The first object will tell the App what text and what icon to use if it is summer. The second object will tell the App what text and what icon to use if it is winter.
@@ -41,29 +65,6 @@ const getSeason = (lat, month) => {
     } else {
         return lat > 0 ? 'winter' : 'summer';
     }
-};
-
-/* 
-check that I have my latitude property down in the 'SeasonDisplay' component which is the child component using:
-console.log(props.lat);
-*/ 
-
-const SeasonDisplay = props => {
-    const season = getSeason(props.lat, new Date().getMonth());
-// To get access to the 2 config objects, we reference them here:
-// Will return the text and the iconName inside of it. Destructure out the text and iconName from seasonConfig at season.
-// Refer to iconName that's in the seasonConfig object.
-// 'massive' is the size from:  https://semantic-ui.com
-
-    const { text, iconName } = seasonConfig[season]; 
-
-    return (
-        <div className={ `season-display ${season}`} >
-            <i className= { `icon-left massive ${iconName} icon` } /> 
-            <h1>{ text }</h1>
-            <i className= { `icon-right massive ${iconName} icon` } />
-        </div>
-    );
 };
 
 export default SeasonDisplay;

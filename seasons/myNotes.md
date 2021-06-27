@@ -558,6 +558,26 @@ the code inside the render method.
 
 Develop a helper function called renderContent, and copy & past the 3 conditionals.
 
+75. Breather and Review:
+
+Go through everything I've learnt inside this seasons App.
+
+1. It's easier to read class based components in terms of code organisation -> inside of the index.js
+The 'SeasonDisply' is functional component.
+
+2. With Class component we can make sure of the state system so easier to handle user input, in my case respond to data loading events (GeoLocation API) or just load data.
+3. Make use of Lifecycle Events.
+4. Rules of Class Components, i.e. Must extend (subclass) React.Component: 
+    class App extends React.Component
+5. Class based component must define a 'render' method that returns some amount of JSX.
+
+State: this is one of the most difficult concept in React can only be used with Class based Components.
+
+
+
+
+
+
 
 
 
