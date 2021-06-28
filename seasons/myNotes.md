@@ -584,8 +584,26 @@ Implement a render method that returns some JSX.
 
 
 76. Exercise Solution - Class-Based Components:
-
 Done on the training website and on my class-based component: indexClassBasedCom.js
+
+CODING EXEERCISE 05: Updating Component with State:
+The 'Clock' class below is trying to implement a clock display that updates every second. Right now, abeginner engineer tried putting the component together, but they're finding that they can't get the time to update!
+
+Your Goal:
+  Update the 'Clock' class so that it properly updates once per second.
+Hints:
+  You definitely need to use 'state'. Make sure you initialise the 'state'  object.
+  Remember that you can get your component to update by calling 'setState'.
+  Remember that you only update state by calling setState.
+
+
+
+77. Updating Components with State - The Solution:
+
+Done. See class-based component named: indexClassClockStte.js and screenshot.
+
+
+
 
 
 
