@@ -573,6 +573,22 @@ The 'SeasonDisply' is functional component.
 
 State: this is one of the most difficult concept in React can only be used with Class based Components.
 
+CODING EXERCISE 4: Class-Based Components:
+
+The 'UserForm' functional component needs to have 'state' or a lifecycle method. Therefore, refactor it to be a class-based component. It should return the exact same JSX.
+Remeber that class-based components must:
+
+Be a JS class;
+Extend React.Component;
+Implement a render method that returns some JSX.
+
+
+76. Exercise Solution - Class-Based Components:
+
+Done on the training website and on my class-based component: indexClassBasedCom.js
+
+
+
 
 
 
