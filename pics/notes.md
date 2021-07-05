@@ -82,5 +82,29 @@ Created the index.js file within src directory.
 Create components directory inside src.
 Created the App.js files inside of component directory.
 
+81. Showing Froms to the User:
+
+Create component called SearchBar. Export it. From App.js import SearchBar component.
+
+In the SearchBar componet we need a text input.
+
+82. Adding a Touch of Style:
+
+For better looking image search on the UI:
+
+https://cdnjs.com/libraries/semantic-ui
+
+Do a search for semantic.min, copy the code. Open 'index.html', inside of the head, write a link tag, past inside it.
+
+To make search feild less than full width:
+        <div className="ui container">
+
+
+Add a little margin at the top: define it inline:
+            <div className="ui container" style={{ marginTop: '20px'}}>
+
+83. Creating Event Handlers:
+
+
 
 
