@@ -105,6 +105,12 @@ Add a little margin at the top: define it inline:
 
 83. Creating Event Handlers:
 
+The user is making changes inside of our app.
+We need to react to user's typing in to the search bar -> write a new method a the top of the class.
+Pass a method 'onInputChange' to a prop called 'onChange', onInputChange is function but we don't put a set of parentheses at the end of it as it's a called back function. So we are passing a reference to this function, to the input element so that the input can call that function at some point in the future. 
+
+Note: DO NOT put a set of parentheses whenever we pass a callback fn to an event handler, like 'onChange'.
+
 
 
 
