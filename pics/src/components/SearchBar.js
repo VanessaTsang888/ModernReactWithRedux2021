@@ -14,18 +14,25 @@ import React from 'react';
 // Our 'input' is called 'onChange' which is a specail prop name as different events will be wired to different prop names.
 // So, anytime user changes this text input, we use the prop name 'onChange'.
 
+// Refactor to show alternate way to write event handler. Then use it few times.
+// Rather than passing a reference to the onInputChange callback fn, replace it with Arrow Function. This is the samething just a abbreviated syntax where we don't need to define a separate method on the class.
+// We'll often use Arrow Function anytime we have a single line of code that we want to execute, anytime that some event occurs.
+
+// Initailise a state object, with a single property called 'term' and set it to default to be an empty string.
+// Replace the 'onChange' prop with an arrow fn as her last lecture.
+// Everytime user types into the input, the state will update using the 'setState'/update the term prop with whatever the current value out of the input is.
+// Write new prop 'value' will be equal to this.state.term
+
 
 class SearchBar extends React.Component {
-    onInputChange(event) {
-        console.log(event.target.value); // Getting value from our user. Using colsole log to test in my developer tools -> Console.
-    }
+    state = { term: '' };
     render() {
         return (
         <div className="ui segment">
             <form className="ui form">
                 <div className="field">
                     <label>Image Search</label>
-                    <input type="text" onChange={this.onInputChange} />
+                    <input type="text" value={ this.state.term } onChange={ e => this.setState({ term: e.target.value }) } />
                 </div>
             </form>
         </div>

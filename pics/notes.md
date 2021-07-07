@@ -111,6 +111,45 @@ Pass a method 'onInputChange' to a prop called 'onChange', onInputChange is func
 
 Note: DO NOT put a set of parentheses whenever we pass a callback fn to an event handler, like 'onChange'.
 
+84. Alternate Event Handler Syntax.
+Using abbrivated syntax:
+Refactor to show alternate way to write event handler. Then use it few times.
+Rather than passing a reference to the onInputChange callback fn, replace it with Arrow Function. This is the samething just a abbreviated syntax where we don't need to define a separate method on the class.
+We'll often use Arrow Function anytime we have a single line of code that we want to execute, anytime that some event occurs.
+
+Before:
+                    <input type="text" onChange={this.onInputChange} />
+
+
+After:
+                    <input type="text" onChange={ (event) => console.log(event.target.value) } />
+
+ Then delete the onInputChange method at the top of the class component. Since we only need to console log out the prop that the user types into the search bar, we can use an Arrow Function.
+We are using arrow fn to pass a callback to a event handler frequently, we'll see the event object abbrivated as just the letter 'e':
+                        <input type="text" onChange={ (e) => console.log(e.target.value) } />
+
+85. Uncontrolled vs Controlled Elements:
+
+Continue with event handlers but more challenging subject around event handlers. 
+Currently we have developed an 'Uncontrolled Form Element' but we would prefer to work with Controlled components.
+
+We need to refactor our search barr from a Uncontrolled element to a Controlled element. The component is still the same as before.
+
+Initailise a state object, with a single property called 'term' and set it to default to be an empty string.
+Replace the 'onChange' prop with an arrow fn as her last lecture.
+ Write new prop 'value' will be equal to this.state.term
+Save the file.
+Tested using my Developer Tools within Chrome and found the search bar still works as before which is what I expeected.
+
+
+
+
+
+
+
+
+
+
 
 
 
