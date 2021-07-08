@@ -22,17 +22,20 @@ import React from 'react';
 // Replace the 'onChange' prop with an arrow fn as her last lecture.
 // Everytime user types into the input, the state will update using the 'setState'/update the term prop with whatever the current value out of the input is.
 // Write new prop 'value' will be equal to this.state.term
+// Changing the initialisation of the state term -  Change the default value of the search input - I can render my search bar with some default value inside by adding text inside of the empty string.
+// To force user to enter capitalised keys: write '.toUpperCase()' in the value within the onChange property.
 
 
 class SearchBar extends React.Component {
-    state = { term: '' };
+    state = { term: 'Enter your search term here' };
     render() {
         return (
         <div className="ui segment">
             <form className="ui form">
                 <div className="field">
                     <label>Image Search</label>
-                    <input type="text" value={ this.state.term } onChange={ e => this.setState({ term: e.target.value }) } />
+                    <input type="text" value={ this.state.term }
+                    onChange={ e => this.setState({ term: e.target.value }) } />
                 </div>
             </form>
         </div>

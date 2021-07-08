@@ -141,6 +141,47 @@ Replace the 'onChange' prop with an arrow fn as her last lecture.
 Save the file.
 Tested using my Developer Tools within Chrome and found the search bar still works as before which is what I expeected.
 
+86. More About Controlled Elements:
+
+The Flow:
+User types inside the input;
+Callback gets invoked;
+We call setState with the new value;
+Component rerenders;
+Input is told what its value is (coming from state.)
+
+WHAT IS THE DIFFERENCE BETWEEN THE TWO IS WHY WE PREFER CONTROLLED ELEMENTS.
+The old way we had to reach out to the DOM to get the value:
+    <input value="hi there" />
+
+Developers don't like to store info inside of our HTML elements as its not best practice. In our Unconrolled element the input tag itsle was storing the value and we don't like to do that.
+Instead we want to store all of my info inside of our React component as we want to make sure that the back side of our App is what is driving all of the data that is folowing through our App.
+We not going to store data inside the DOM.
+
+Diagram after Refactoring it to be Controlled:
+We don't need to look at the DOM, somehow reference that input and pull the value out of it. We can look directly at our component, look at its state object - my component has a term of 'hi there'.
+That means the value of my input must be 'high there'. If we go into the DOM - 'go into the state, I don't know what the value is?'. So we'll always make use of our React component.
+The idea is that we are storing our info inside of our component on our state property as opposed to storing info inside the DOM.
+
+We set the value on the input with essentially the value that is already in there. The input knows what user has typed but we are overriding that and putting a new value back in - the same value that.
+was already in there. This is to make sure the React App is driving and storing all data and not the HTML side of things. We want to store info in components not DOM.
+
+We use Controlled Elements as we need to make sure that it is React App driving and storing all of our data and NOT the HTML side of things. We want to store everything in componets rather than in the DOM.
+
+If I want to render my search bar with some default value inside the input, I change the initialisation of the state term.
+
+We can force user to always type-in uppercase letters by forcing the value within the 'onChange' prop to: .toUpperCase()
+                        onChange={ e => this.setState({ term: e.target.value.toUpperCase() }) } />
+Then the entire component will rerender and the input will rerender too and force in a capitalised version of the value to it. Therefore, certain opporations get really easy when I start using Controlled components.                     
+
+Controlled components is not only for text inputs but for many other elements eg, select option or radio buttons or checkboxes.
+
+87. Exercise Overview - Receiving Values:
+
+This password component has a little validation in it.
+User must enter a pw that is at least four characters in lengh.
+The task is to rewrite the code so that once the user has typed at least 4 character the warning msg disappears.
+There is 2 files: App.js and Validator.js
 
 
 
