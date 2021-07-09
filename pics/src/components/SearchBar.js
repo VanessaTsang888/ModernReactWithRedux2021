@@ -25,13 +25,24 @@ import React from 'react';
 // Changing the initialisation of the state term -  Change the default value of the search input - I can render my search bar with some default value inside by adding text inside of the empty string.
 // To force user to enter capitalised keys: write '.toUpperCase()' in the value within the onChange property.
 
+// When user press Enter key - will trigger a search.
+// By default the form will automatically submit when user has typed in text/info into search bar and press Enter Key. However, we need to prevent this default behavior by writing a onSubmit event handler
+// function at the top of the class and then more code within the return method -> form element and the input element. So the callback will get evoked.
+// onFormSubmit(event)
+
 
 class SearchBar extends React.Component {
     state = { term: 'Enter your search term here' };
+
+    onFormSubmit(event) {
+        event.preventDefault();
+        console.log(this.state.term);
+    }
+
     render() {
         return (
         <div className="ui segment">
-            <form className="ui form">
+            <form onSubmit={this.onFormSubmit} className="ui form">
                 <div className="field">
                     <label>Image Search</label>
                     <input type="text" value={ this.state.term }

@@ -183,6 +183,141 @@ User must enter a pw that is at least four characters in lengh.
 The task is to rewrite the code so that once the user has typed at least 4 character the warning msg disappears.
 There is 2 files: App.js and Validator.js
 
+Receiving Values From Controlled Elements:
+You can validate inpiuts easily by using React's state system. Build a simple password validator. This iwll be a text input that requires the user to enter a password that is at least 4 characters long. If the user enters a password that is less than 4 characters, a small warning message will be displayed.
+
+The Goal:
+1. Whenever a user types in the text input, update the password piece of state.
+Hints:
+1. You will need to add the props onChnage and value to the text input in the validator.js file.
+2. Whenever user types in the input, the function you provide to onChnage will be called with an event object. If you look at event.target.value (or e.target.value if you want to use the abbreviation) you'll get the current text in the text input.
+3. Use that value to update the password piece of state.
+4. Don't forget to assign the value prop back to the input!.
+
+88. Exercise Solution:
+
+    value={ this.state.password }
+We going to take whatever the current value is of this state and assign to the value prop of this input. Then we'll add in an 'onChange' prop. So when user makes a change to the input we going to
+make sure that we take that updated value and use it to update our password piece of state.
+
+class Validator extends React.Component {
+    // State is being initialized in a slightly different way than is shown
+    // in the previous videos. You can ignore this different syntax for now.
+    constructor(props) {
+        super(props);
+        this.state = { password: '' };
+    }
+    
+    render() {
+        return (
+            <div className="ui segment">
+                <form className="ui form">
+                    <div className="field">
+                        <label>Enter Password</label>
+                        <input 
+                            type="password"
+                            value={ this.state.password }
+                            onChange={ e => this.setState({ password: e.target.value }) }
+                        />
+                    </div>
+                    {this.state.password.length < 4 ? 'Password must be at least 4 characters' : ''}
+                </form>
+            </div>
+        );
+    }
+}
+
+89. Handling Form Submittal:
+
+Now our search bar knows what user is typing into that input. Now we need to make sure that if the user presses on the enter key after entering some search term, we want to somehow trigger a search for some images and then show those images on the screen. 0:23
+
+1. When user press Enter key - will trigger a search.
+2. By default the form will automatically submit when user has typed in text/info into search bar and press Enter Key. However, we need to prevent this default behavior by writing a onSubmit event handler function at the top of the class and then more code within the return method -> form element and the input element. So the callback will get evoked.
+
+The below code will give me an error in my console:
+
+The Code:
+        console.log(this.state.term);
+
+The Error that I expect:
+    TypeError: Cannot read property 'state' of undefined
+
+90. Understanding 'this' in JS:
+
+We've put a 'onFormSubmit' event handler on our Form element. We've passed a callback fn, and then we saw several times that the callback fn was successfully being called as after we added event.preventDefault(), the browser no longer automatically refresh itself.
+
+Why are we seeing the error message?
+It's a common error msg so important to understand why we are seeing it - root cause.
+
+It means:
+I cannot access the property state on the value underfined.
+Undefined is a value inside of JS. If you tried to access a property on undefined, such as undefined states, you're going to get the same error msg.
+
+Our console logout is trying to access this.state not undefined. So JS thinks that inside of this onFormSubmit(), 'this' is not equal to our instance of the search bar class but equal to the value of
+undefined.
+
+1. What is 'this' keyword used for in a class?
+2. How is the value of 'this' determinded in a function?
+
+The 'this' keyword is used for to point to proprties (i.e. term) or fn's (i.e. onForSubmit) within the same class. See the lectures diagram.
+
+Good example that makes use of the 'this' keyword inside of a method on a class;
+
+// An object called 'Car':
+class Car {
+    setDriveSound(sound) {
+        this.sound = sound;
+    }
+
+    drive() {
+        return this.sound;
+    }
+}
+
+// An instance of the 'Car' object which is a class.
+const car = new Car();
+car.setDriveSound( ''vroom );
+car.drive();
+
+So to find out what 'this' value is equal to that is inside of a method on a class, we look not at the method itslef, we look at where we call the method, i.e. car.drive()
+That is where we are calling 'drive()'
+The rule is we find the function name, it is drive().
+We look at the dot to the left of the fn, then the variable that is referenced to the left hand side. So it is the 'car' variable that the 'return this.sound' will be equal to inside of the drive() fn.
+So, return this.sound will be equal to the 'car' variable or the instance of the car class
+So to find out what the value of 'this' inside of the method, you don't look at the method but the where the method is called, you look at what is to the left of the dot when the fn (i.e. drive) gets called.
+So when drive gets called, 'this' is equal to our instance of the Car.
+
+We can write another instance of the 'Car' called 'truck' that uses the same 'this' keyword but to output a different sound when we call that truck fn:
+
+const truck = {
+    sound: 'putputput'
+    driveMyTruck: car.drive;
+}
+
+truck.driveMyTruck()
+
+// I can assign the drive() to a variable called 'drive':
+const drive = car.drive;
+
+// Then call the drive fn:
+drive();
+
+// An error msg is return as there is nothing to the left of it, so its undefined. Should be:
+car.drive();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
