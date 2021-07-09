@@ -29,20 +29,23 @@ import React from 'react';
 // By default the form will automatically submit when user has typed in text/info into search bar and press Enter Key. However, we need to prevent this default behavior by writing a onSubmit event handler
 // function at the top of the class and then more code within the return method -> form element and the input element. So the callback will get evoked.
 // onFormSubmit(event)
+// Turn the onFormSubmit() into an arrow fn as arrow fn automatically bind the value of 'this' for all the code inside the fn. So the arrow fn is going to auto make sure that the value of 'this' is always equal
+// to the value of the instance of the search bar.
+
 
 
 class SearchBar extends React.Component {
     state = { term: 'Enter your search term here' };
 
-    onFormSubmit(event) {
+    onFormSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state.term);
-    }
+        this.props.onSubmit(this.state.term);
+    };
 
     render() {
         return (
         <div className="ui segment">
-            <form onSubmit={this.onFormSubmit} className="ui form">
+            <form onSubmit={ this.onFormSubmit } className="ui form"> {/* passing a reference to a function */}
                 <div className="field">
                     <label>Image Search</label>
                     <input type="text" value={ this.state.term }

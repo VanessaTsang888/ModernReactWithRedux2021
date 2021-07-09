@@ -305,25 +305,98 @@ drive();
 // An error msg is return as there is nothing to the left of it, so its undefined. Should be:
 car.drive();
 
+91. Solving Context Issues:
+
+There are many different ways to solve this and we'll see a couple.
+
+Solution 01: Use a 'constructor':
+
+Using class Car {} as an example:
+    class Car not extending anything so we don't need to call 'super', instead I 'bind' the drive():
+
+    class Car {
+        constructor() {
+            this.drive = this.drive.bind(this);
+        }
+    }
+
+Then I get the correct result from calling drive at the bottom/will logout:
+    vroom
+
+When we bind a fn or call this drive bind, its going to produce a new version of that fn. So this make a new fn all together:
+    this.drive.bind(this);
+
+1. Find the constructor,
+2. Bind the fn,
+3. Then override the existing one.
+
+Solution 02: Arrow Fn on inline callback -> onChange property:
+
+Turn the onFormSubmit() into an arrow fn instead as one of the special features of arrow fn is that they automatically bind the value of 'this' for all the code inside the fn so we can replace this
+default implementation. So the arrow fn is going to auto make sure that the value of 'this' is always equal to the value of the instance of the search bar.
+When test in console by typing our search term and press Enter key, we see our search term  in the input and witout the error msg logged out.
+The Code:
+
+    onFormSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state.term);
+    }
 
 
+Solution 03: 
 
+Techically we already used it in our input element. It has a 'callback' that gets passed down into that component using an arrow fn. So rather than defining a method on our class, using an arrow fn, we just
+pass an arrow fn directly into the onChange property. So we can do the samething for the 'onFormSubmit' and need to invoke it with a set of empty parentheses:
+                <form onSubmit={ (event) => this.onFormSubmit(event) } className="ui form">
 
+When form gets submitted, it going to call the arrow fn/ execute the above line of code. Its only going to call it one time so we need to make sure we inoke onFormSubmit.               
 
+The default solution to fix this problem we will turn the onFormSubmit fn at the top of the class into an arrow fn:
+        onFormSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state.term);
+    }
 
+92. Communicating Child to Parent:
 
+Now we have our search term, we know that if user enters in some anount of text and hits Enter key, we want to initiate API requests and go find some images.
 
+API Request:
+Where to initiate to fetch some images? Its not the SearchBar component job to take the term and make an API request or find some images. It would be the purpose of the App component instead.
+We need to take the the search term and pass it back up to the App component. Then the App component can be in charge making the API request and getting a list of images.
 
+How to get search term from the search bar back up to the App component.
 
+We can only pass info from the App component down to search bar through props but we can use but we can use a little trick:
 
+Turn App component into a class based component.
+Then define a callback method called 'onSearchSubmit'.
+Then when App component decides to show the search bar, its going to pass the 'onSearchSubmit' callback as a prop down to the search bar.
+The search bar will hold on to the method,
+When user submit the form, it will take the callback with whatever the search term was. So it's going to invoke the callback inside the App component with whatever search term the user just entered.
 
+This entire system is very similar to the onSubmit and the onChange event handlers we've already put together for the form and the input. We are passing a callback fn down into these elements
+and then whenever somthing happens to our components they are going to call the callback fn's to give the search bar a little notice that something has happened and deal with this event that just occurred.
 
+First, refactor our App component so it can have some function that can take and pass down into the search bar.
 
+93. Invoking Callbacks in Children:
 
+Refactor the App functional component to a class component.
+Define a callback method fn on the App and give it the name of: onSearchSubmit. It will get called with our search term abbrivated to: term.
+Take the method and pass it down into the search bar as a prop: <SearchBar onSubmit={ this.onSearchSubmit } />
+Each time the search bar is submitted, onSubmit property will run this fn.
 
+When we are in a class component, we reference the props object with 'this.props':
+    this.props.onSubmit;
+Call it like this:         this.props.onSubmit(this.state.term);
+So we invoke that fn with the argument of: this.state.term
 
+Tested and found my term is logged from the App component as expected.
+ 
+SECTION 8: MAKING API REQUESTS WITH REACT:
 
-
+Data loading inside of our App.
 
 
 
