@@ -398,7 +398,7 @@ SECTION 8: MAKING API REQUESTS WITH REACT:
 
 Data loading inside of our App.
 
-
+Videos watched: on 98. Setting State After Async Request. continue from video 99.
 
 
 

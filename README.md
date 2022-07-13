@@ -1,16 +1,17 @@
 # Modern React with Redux [2020 Update]
 
-This is the online React.js training course that I have been studying around my full time job as a Junior Software Engineer for a defence contrator in Gloucester, England.
+This is the Udemy online React.js training course that I have been studying around my full time job as a Junior Software Engineer for a defence contrator in Gloucester, England.
+
+July 2022: its been a while since I've had time working on this training course due to my full time job as Software Engineer. Therefore, I am starting again from the top.
 
 ## About
 
-I had purchased this course from Undemy: (https://www.udemy.com/course/react-redux/)
+I had purchased this course from Undemy [Modern React with Redux - 2020 Update](https://www.udemy.com/course/react-redux/)
 This course has had recent updates and has many postitive reviews and ratings.
 
 During this courses I am learning to use various different libraries which I have found very useful.
 
 How I have approched this course is top to bottom and I have a mentor that has been helping me when needed. I am enjoy lerning React and Redux for frontend software development as I am from UX Design background.
-
 
 ## Available Scripts
 
@@ -36,7 +37,3 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### Frameworks, libraries and tools:
 
 See indivdual web application.
-
-
-
-
