@@ -16,5 +16,8 @@ function App() {
   return <h1>Hi there!</h1>;
 }
 
-// 5) Show the component on the screen/UI.
+// 5) Show the component on the screen by calling root.render and pass in App component.
+// to run the app i have installed node modules at the root of the project directory and use the cmd: npm start.
+// I got the Hi there! message or data on the screen as expected. Now I have a basic component displayed on screen in 5 steps.
+
 root.render(<App />);
