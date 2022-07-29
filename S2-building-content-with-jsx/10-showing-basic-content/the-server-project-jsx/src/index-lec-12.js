@@ -12,19 +12,12 @@ const el = document.getElementById('root');
 const root = ReactDOM.createRoot(el);
 
 // 4) Create a component.
-/*
-Lecture 13  Shorthand JS Expression:   
-    Use braces to write out an expression directly inside of our JSX.
-    Printout the current time on the screen using the date Object.
-    Do not decleare a variable ahead of time and reference it inside of the JSX.
-*/
-
 function App() {
-    return <h1>{new Date().toLocaleDateString()}</h1>;
+  return <h1>Hi there!</h1>;
 }
 
 // 5) Show the component on the screen by calling root.render and pass in App component.
+// to run the app i have installed node modules at the root of the project directory and use the cmd: npm start.
+// I got the Hi there! message or data on the screen as expected. Now I have a basic component displayed on screen in 5 steps.
 
 root.render(<App />);
-
-// For me the logic is simple, the msg displayed on screen will depend on the num returned by the predefined method.

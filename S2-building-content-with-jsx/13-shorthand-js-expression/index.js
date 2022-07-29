@@ -13,10 +13,8 @@ const root = ReactDOM.createRoot(el);
 
 // 4) Create a component.
 /*
-Lecture 13  Shorthand JS Expression:   
-    Use braces to write out an expression directly inside of our JSX.
+    1. Use  braces to write out an expression directly inside of our JSX.
     Printout the current time on the screen using the date Object.
-    Do not decleare a variable ahead of time and reference it inside of the JSX.
 */
 
 function App() {
