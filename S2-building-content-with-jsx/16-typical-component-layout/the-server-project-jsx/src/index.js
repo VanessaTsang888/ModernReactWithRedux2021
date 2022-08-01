@@ -12,12 +12,19 @@ const el = document.getElementById('root');
 const root = ReactDOM.createRoot(el);
 
 // 4) Create a component.
+/*
+    1. Use  braces to write out an expression directly inside of our JSX.
+    Printout both variables inside of the h1.
+*/
+
 function App() {
-  return <h1>Hi there!</h1>;
+    const name = 'Samantha';
+    const age = 23;
+    return <h1>Lay ho, my name is {name} and my age is {age}</h1>;
 }
 
 // 5) Show the component on the screen by calling root.render and pass in App component.
-// to run the app i have installed node modules at the root of the project directory and use the cmd: npm start.
-// I got the Hi there! message or data on the screen as expected. Now I have a basic component displayed on screen in 5 steps.
 
 root.render(<App />);
+
+// For me the logic is simple, the msg displayed on screen will depend on the num returned by the predefined method.
