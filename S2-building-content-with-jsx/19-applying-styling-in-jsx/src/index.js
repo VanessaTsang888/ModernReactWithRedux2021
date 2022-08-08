@@ -24,9 +24,9 @@ Step 4: For JSX use className as prop name rather than class which is HTML attri
 step 5: I only get the blue border when I click on the input field. Is this expected?
 ****************************************************************************************/
 function App() {
-  // return <input spellCheck />;
+  return <input spellCheck />;
   // return <div className="divider" />;
-  return <input style={{ border: '1px sold blue' }} />;
+  // return <input style={{ border: '1px sold blue' }} />;
 }
 
 // 5) Show the component on the screen
