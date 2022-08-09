@@ -16,7 +16,7 @@ Stept 2: When we specify a number in html attribute we provide it as a String.
 To convert into JSX, we use braces. If we don't then we'll get
 a consol log warning in browser, so follow this rule.
 Step 3: Boolean 'true' can be written with just the prop name. In the UI, I
-type text of: recieve but its not underlined in red.
+type text of: recieve but its not underlined in red in Chrome. However, works as expected in Fire Fox.
 
 'False' should be written with braces. In the UI this will not underline text
 in red even there is a typo.

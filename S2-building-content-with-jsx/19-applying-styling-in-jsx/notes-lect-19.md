@@ -32,7 +32,7 @@ Forms:
 ```
 
 3. Boolean 'true' can be written with just the prop name. 'False' should be written with braces.
-   In JSX, when we provide a Boolean of ture to a prop, we can just write out the prop name by itself. But for Boolean of fale, we do need to write false.
+   In JSX, when we provide a Boolean of ture to a prop, we can just write out the prop name by itself. But for Boolean of fale, we do need to write false. This prop works in Fire Fox but not in Chrome as I found out when testing in the UI.
 
 ```
 < input spellcheck="true" />  ->  <input spellCheck />
