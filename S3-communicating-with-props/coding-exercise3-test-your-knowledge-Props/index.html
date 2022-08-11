@@ -1,0 +1,49 @@
+<script type="text/babel" data-presets="env,react">
+  const App = () => {
+    return (
+      // 1. Inside the Message component, I wrote new prop called header that contains the text that I want to show inside of the header div.
+      //
+      <div>
+        <Message header='Atention!' text='We did an update' />
+      </div>
+    );
+  };
+
+  // I have made this compnent more reusable than it was.
+  // for the first argument in the function I wrote props so I can replace the hardcoded text with a set of braces and inside it I refered to the header props.
+  // Now the text is updated to say: Attention!.
+  // For the <p> I've done the same thing. First I added a new prop of text and gave it some text. Then in the Message component reference { props.text }
+
+  const Message = (props) => {
+    return (
+      <div className='ui message'>
+        <div className='header'>{props.header}</div>
+        <p>{props.text}</p>
+      </div>
+    );
+  };
+
+  // Renders the App component into a div with id 'root'
+  ReactDOM.render(<App />, document.querySelector('#root'));
+</script>
+
+<!--The App component above will be rendered into this-->
+<div id="root"></div>
+
+<!--No need to change anything after this line!-->
+<!--No need to change anything after this line!-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.0.0/polyfill.min.js"></script>
+<script
+  crossorigin
+  src="https://unpkg.com/@babel/standalone@7.0.0/babel.min.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/@babel/preset-env-standalone@7.0.0/babel-preset-env.min.js"
+></script>
+<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+/>
