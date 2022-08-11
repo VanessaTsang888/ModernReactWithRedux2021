@@ -12,6 +12,8 @@ import ReactDOM from 'react-dom';
 import faker from 'faker';
 import CommentDetail from './CommentDetail';
 import ApprovalCard from './ApprovalCard';
+// Lecture 39 Optional Styling - I love the layout and the bright colourful background.
+import './style/App.css';
 
 const App = () => {
   return (

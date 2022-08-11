@@ -21,3 +21,17 @@ Also multiple elements can be wrapped by the ApprovalCard component tag, e.g. I 
 ```
 
 This will work ONLY if we make sure we reference { props.children } in the ApprovalCard component.
+
+# 39 Optional styling
+
+**Instructions**
+
+Attached is some optional styling that you can add to your project.
+
+If you wish to use the assets, you can do so by following the instructions below:
+
+Download the style.zip file attached to this lecture.
+
+Unzip the file and copy it to the src directory
+
+Add import './style/App.css' to the top of the index.js file.
