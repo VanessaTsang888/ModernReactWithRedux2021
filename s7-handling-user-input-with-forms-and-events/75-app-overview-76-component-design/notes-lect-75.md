@@ -40,3 +40,4 @@ More complex as same as before but now how we going to show the data or images -
 - Generate new project.
 - cd in to the relevant folder.
 - Use this cmd: create-react-app pics
+- That cmd didn't work so I used this: npx create-react-app pics
