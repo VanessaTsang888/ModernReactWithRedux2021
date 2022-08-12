@@ -1,0 +1,66 @@
+<!-- The className that was inside of the second div, I cut that and pased it
+inside the first className. This worked as the first part to my solution.
+
+I also replaced the second <div> with a <Segment> component tag.
+
+ Then after the App component  I wrote the Segment component that has a return statement and jsx inside of it.
+ Then the same process for the next <div> that has the content for the second Segment.
+  Now I have a nice Segment component that I can reuse in future component or future projects as well.
+-->
+
+<script type="text/babel" data-presets="env,react">
+  const App = () => {
+    return (
+      <div className='ui icon header'>
+        <Segment>
+          <div>
+            <i className='pdf file outline icon'></i>
+            No documents are listed for this customer.
+          </div>
+          <div className='ui primary button'>Add Document</div>
+        </Segment>
+
+        <Segment>
+          <h4 class='ui header'>For Your Information</h4>
+          <p>
+            Pellentesque habitant morbi tristique senectus et netus et malesuada
+            fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+            ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+            egestas semper. Aenean ultricies mi vitae est. Mauris placerat
+            eleifend leo.
+          </p>
+        </Segment>
+      </div>
+    );
+  };
+  // Since I'm going to have to refer to my props object inside of this Segment component, I need to now receive that props object as the first argusment to the Segment component.
+  // Return a <div> with the same className as in the App component. Inside that <div> reference the: props.children with a set of braces.
+  // new Segment component that we can reuse on future projects:
+  const Segment = (props) => {
+    return <div className='ui placeholder segment'>{props.children}</div>;
+  };
+
+  // Renders the App component into a div with id 'root'
+  ReactDOM.render(<App />, document.querySelector('#root'));
+</script>
+
+<!--The App component above will be rendered into this-->
+<div id="root"></div>
+
+<!--No need to change anything after this line!-->
+<!--No need to change anything after this line!-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.0.0/polyfill.min.js"></script>
+<script
+  crossorigin
+  src="https://unpkg.com/@babel/standalone@7.0.0/babel.min.js"
+></script>
+<script
+  crossorigin
+  src="https://unpkg.com/@babel/preset-env-standalone@7.0.0/babel-preset-env.min.js"
+></script>
+<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+/>
