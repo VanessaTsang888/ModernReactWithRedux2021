@@ -13,6 +13,11 @@ During this courses I am learning to use various different libraries which I hav
 
 How I have approched this course is top to bottom and I have a mentor that has been helping me when needed. I am enjoy lerning React and Redux for frontend software development as I am from UX Design background.
 
+## React apps
+
+1. Blog Posts
+   This React App is a web page of a number of blog posts. Each posts is develop with reusable components. This App demonstrates how the React Props System works, e.g. parent component passes data to child component but not directly the other way.
+
 ## Available Scripts
 
 For most of the web apps i develop during this course, node modules is needed to be installed using the below command:
