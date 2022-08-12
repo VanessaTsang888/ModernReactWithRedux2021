@@ -55,6 +55,22 @@ const App = () => {
           avatar={faker.image.image()}
         />
       </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author='Jane'
+          timeAgo='Today at 2:00PM'
+          content='良好的寫作技巧'
+          avatar={faker.image.image()}
+        />
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+          author='Jane'
+          timeAgo='Yesterday at 7:00PM'
+          content='很好的選擇'
+          avatar={faker.image.image()}
+        />
+      </ApprovalCard>
     </div>
   );
 };
