@@ -18,6 +18,6 @@ Hooks are tools to help us write reusable code, instead of more classic techniqu
 
 ### Primitive Hooks
 
-Within the hook system we have the primitive hooks which are ten functions included in React to give us more functionaly to function components. They each serve a very specific purpose.
+Within the hook system we have the primitive hooks which are ten functions included in React to give us more functionaly to functional components. They each serve a very specific purpose.
 
 Later will make use of some of these hooks to write our own custom hooks, e.g. useTranslate = useState + useEffect. So a custom hook reuse multiple primative hooks.
