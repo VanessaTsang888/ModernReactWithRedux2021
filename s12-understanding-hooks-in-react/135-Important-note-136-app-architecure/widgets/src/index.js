@@ -1,12 +1,11 @@
-/*
-2.
+/************************************************************************
+
+Step :.
 import react from react library.
 import react dom from react-dom.
 import the App component.
 
-
-
-*/
+************************************************************************/
 
 import React from 'react';
 import ReactDOM from 'react-dom';
