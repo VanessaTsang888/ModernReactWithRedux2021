@@ -5,7 +5,8 @@ and will be stored into this variable that we've defined with const. We consol.l
 out to test in the UI.
 *************************************************************************************/
 
-import React from 'react';
+// L140: 1. Get the useState function from the React library which gives us access to state inside of a functional component.
+import React, { useState } from 'react';
 
 const Accordion = ({ items }) => {
   /************************************************************************************
@@ -14,8 +15,12 @@ const Accordion = ({ items }) => {
   to the onClick Prop. 
 **********************************************************************************/
 
+  //  L140: 2. Initialise a new piece of state.
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  // L140: 3. Update the value of our piece of state anytime a user clicks on a title.
   const onTitleClick = (index) => {
-    console.log('Title clicked', index);
+    setActiveIndex(index);
   };
 
   const renderedItems = items.map((item, index) => {
@@ -35,8 +40,13 @@ const Accordion = ({ items }) => {
       </React.Fragment>
     );
   });
-
-  return <div className='ui styled accordion'>{renderedItems}</div>;
+  // L140: 4. Use h1 tag to print out the value of: activeIndex.
+  return (
+    <div className='ui styled accordion'>
+      {renderedItems}
+      <h1>{activeIndex}</h1>
+    </div>
+  );
 };
 
 export default Accordion;
