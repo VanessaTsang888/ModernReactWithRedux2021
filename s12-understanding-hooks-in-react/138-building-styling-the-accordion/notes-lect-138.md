@@ -16,6 +16,9 @@ Now in the return statement -> second div -> icon tag (for the dropdown icon) an
 
 Double Boarder Problem -> x2 boarders - gray line displayed caused by the top level element - the div within the first return statement. This extra div applied the second boarder at the top. To resolve this problem, change that div into a React Fragment, keep the key of item as we still need to display the title from the item of the items array.
 
+Problem
+The first div tag inside of the first return statement created an extra boarder at the top which we don't want. To resolve this problem we use a React Fragment so that we don't get that extra element but just jsx containing element that React understands that we have x2 div's inside of it.
+
 **_The Up_**
 
 To apply some functionality to our Accordion we will use the React Hook System.
