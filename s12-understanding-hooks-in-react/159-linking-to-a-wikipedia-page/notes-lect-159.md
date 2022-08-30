@@ -6,6 +6,7 @@ To show a link to the right of every search result, inside of the div with the k
 
 **_Take user to a particular page_**
 Make sure that the anchor element has a href property assigned to it. WRite a set of braces for templating and inside a set of back-ticks with url and string templating with pageid inside of it.
+When user hover over btn, they can see from bottom-left the page id of the page that btn will take the user.
 
 ```js
 <a className='ui button' href={`https://en.wikipedia.org?curid=${result.pageid}}>Go</a>
