@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const Search = () => {
+  // programming is the default search term to make sure we don't do a search term without any content.
+  // const [term, setTerm] = useState("programming");
   const [term, setTerm] = useState("programming");
+  s;
   const [results, setResults] = useState([]);
 
   useEffect(() => {
@@ -20,7 +23,11 @@ const Search = () => {
       setResults(data.query.search);
     };
 
-    search();
+    // Only run search if there is a term. So if term is an empty String, don't do a search at all.
+    // Otherwise if we have some search defined go ahead run the search - do more searches.
+    if (term) {
+      search();
+    }
   }, [term]);
 
   const renderedResults = results.map((result) => {
