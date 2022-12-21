@@ -1,8 +1,10 @@
 # Modern React with Redux [2020 Update]
 
-This is the Udemy online React.js training course that I have been studying around my full time job as a Junior Software Engineer for a defence contrator in Gloucester, England.
+December 2022: there has been some major updates to this course such as new Apps, hence why the date for this course has changed to 2023 Update. Therefore, I am now starting from the begining. For some lectures I may just need to watch the video again without taking any new notes/code with the lectures. Other lectures that has had major updates, I will redo those lectures.
 
 July 2022: its been a while since I've had time working on this training course due to my full time job as Software Engineer. Therefore, I am starting again from the top.
+
+This is the Udemy online React.js training course that I have been studying around my full time job as a Junior Software Engineer for a defence contrator in Gloucester, England.
 
 ## About
 
