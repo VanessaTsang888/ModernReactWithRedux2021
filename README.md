@@ -1,4 +1,4 @@
-# Modern React with Redux [2020 Update]
+# Modern React with Redux [2023 Update]
 
 December 2022: there has been some major updates to this course such as new Apps, hence why the date for this course has changed to 2023 Update. Therefore, I am now starting from the begining. For some lectures I may just need to watch the video again without taking any new notes/code with the lectures. Other lectures that has had major updates, I will redo those lectures.
 
