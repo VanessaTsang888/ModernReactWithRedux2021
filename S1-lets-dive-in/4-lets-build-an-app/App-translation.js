@@ -11,6 +11,7 @@ export default function App() {
   const [language, setLanguage] = useState("es");
   const [text, setText] = useState("");
   // jsx code. inside each compoent is an option.
+  // React components are: Field, Languages, Translate.
   return (
     <div>
       <Field onChange={setText} />
@@ -20,5 +21,3 @@ export default function App() {
     </div>
   );
 }
-
-

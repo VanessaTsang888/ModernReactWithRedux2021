@@ -1,0 +1,19 @@
+# Section 1 -> lecture 4: Let's Build an App
+
+We are going to develop a translate App.
+
+- User will type their text into the input box or field, this will get translated, then show the outpout at the bottom of the screen.
+- When user change their input text, the output will auto change as well.
+- The starter files are in here: codesandbox.io/s/react-pibc94
+- This is an online editor with files and folder already created for me.
+- a quick demo project.
+- The completed version of the app is here: codesandbox.io/s/react-forked-m5bz37
+
+Write out code without much explaination as the explaination will be on the next video.
+
+## Coding
+
+App-translation.js
+This is my react component file with the logic inside of it.
+
+The hook useState is case sensitive -> lower cameral case.
