@@ -12,7 +12,7 @@ The npx is a tool to create the React App.
 I'm going to learn about jsx so my project is going to be called: jsx
 so my cmd is: `npx ceate-react-app jsx`
 The installation process will take a couple of mins. Once done will see a new folder inside of my current directory.
-Now cd into this new jsx project directory.
+Now cd into this new jsx project directory and install node moduels: `npm i`
 
 1. Run the cmd: `npm start`
 2. React App will auto open in my browser.
