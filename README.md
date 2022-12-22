@@ -15,6 +15,8 @@ During this courses I am learning to use various different libraries which I hav
 
 How I have approched this course is top to bottom and I have a mentor that has been helping me when needed. I am enjoy lerning React and Redux for frontend software development as I am from UX Design background.
 
+Please not in my repository (within my GitHub) for this training course I have a dev branch and a main branch. Only when I have done as much as I can on this course then I will merge from dev to main branch. The repo for this training course is: https://github.com/VanessaTsang888/ModernReactWithRedux2021
+
 ## React apps
 
 1. Blog Posts
