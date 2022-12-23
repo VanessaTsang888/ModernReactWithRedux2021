@@ -41,3 +41,5 @@ function App() {
 ```
 
 A3: Nothing, React would throw an error as you are trying to show an object.
+
+END OF QUIZ.
