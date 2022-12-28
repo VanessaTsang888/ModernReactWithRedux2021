@@ -1,7 +1,8 @@
-/*******************************************************************************
-Converting HTML to JSX to develop a text field for users to enter some text.
+# 20 Exercise Solution
 
-*******************************************************************************/
+I have watched the video for this lecture and found out that my code is correct. Plus, I've added some extra code comments.
+
+```js
 import React from "react";
 
 function App() {
@@ -22,3 +23,4 @@ function App() {
 }
 
 export default App;
+```
