@@ -44,4 +44,5 @@ import App from "./App";
 <App />
 ```
 
+Task Completed:
 Created new component and written the function block of code. Created screenshots. Now my project is a little better organised in multiple files.
