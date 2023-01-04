@@ -14,7 +14,8 @@ import SiriImage from "./images/siri.png";
  Show images using Image tag > write reference to an image.
  Handling image accessibility.
  L39: style our heading located at the top of our web page using additional elements from Bulma > Layout > Hero. Show a description on each Card
- > from App.js we need to pass down another prop that will contain the description. Then use it inside of ProfileCard component.
+ > from App.js we need to pass down another prop that will contain the description. Then use it inside of ProfileCard component. I've written an
+ JS expression directly inside a set of braces (as per lecture 13) to include the current date using the JS Date func.
 *************************************************************************************************************************************************/
 
 function App() {
@@ -22,7 +23,10 @@ function App() {
     <div>
       <section className="hero is-primary">
         <div className="hero-body">
-          <p className="title">Personal Digital Assistants: by Vanessa Tsang</p>
+          <p className="title">
+            Personal Digital Assistants: by Vanessa Tsang on{" "}
+            {new Date().toLocaleDateString()}{" "}
+          </p>
         </div>
       </section>
       <div className="container">
