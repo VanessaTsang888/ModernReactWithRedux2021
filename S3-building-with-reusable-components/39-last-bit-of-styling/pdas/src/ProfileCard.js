@@ -1,0 +1,41 @@
+// write a component and export it. Then show it inside of the App.js file.
+
+/*************************************************************************************************************
+Use the props system -> first argument is the props which we can call it anything we want.
+Then we can use it however we want such as use braces to dynamically printout certain data.
+We wrote out this component once and this func is being called 3 times by React. Each time its 
+being called its being given a different props object (the first props argument) and this is 
+how we can customise our ProfileCard component - don't need to write the JSX over and over again.
+
+Destructuring in the argument list -> in jsx, we don't need reference the props but only props name in braces.
+Destructuring x2 variables instead of writing x2 lines of code to declare variable and assign it a value twice.
+
+L35 Handling image accessibility: write the attributes of alt and title for accessibility. The title attribut is 
+a tool-tip.
+L38 A Big Pile HTML: lots adding additional elements (div's) to this Component to style our card/project. 
+L39: style our heading located at the top of our web page using additional elements from Bulma > Layout > Hero.
+Show a description on each Card. from App.js we need to pass down another prop that will contain the description.
+Then use it inside of ProfileCard component. 
+**************************************************************************************************************/
+
+function ProfileCard({ title, handle, image, description }) {
+  return (
+    <div className="card" style={{ minHeight: "100%" }}>
+      <div className="card-image">
+        <figure className="image is-1by1">
+          <img src={image} alt="pda logo" title="pda logo" />
+        </figure>
+      </div>
+      <div className="card-content">
+        <div className="media-content">
+          <p className="title is-4">{title}</p>
+          <p className="subtitle is-6">{handle}</p>
+        </div>
+        {/* Use the 'description' prop we've written within the list inside of the Object */}
+        <div className="content">{description}</div>
+      </div>
+    </div>
+  );
+}
+
+export default ProfileCard;
