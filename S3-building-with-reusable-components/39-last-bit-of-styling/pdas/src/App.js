@@ -32,7 +32,7 @@ function App() {
       <div className="container">
         <section className="section">
           <div className="columns">
-            <div className="colum is-2">
+            <div className="column is-4">
               <ProfileCard
                 title="Alexa"
                 handle="@alexa99"
@@ -40,7 +40,7 @@ function App() {
                 description="Alexa was created by Amazon and helps us buy things online."
               />
             </div>
-            <div className="colum is-2">
+            <div className="column is-4">
               <ProfileCard
                 title="Cortana"
                 handle="@cortana32"
@@ -48,7 +48,7 @@ function App() {
                 description="Cortana was made by Microsoft and helps us with our tasks."
               />
             </div>
-            <div className="colum is-2">
+            <div className="column is-4">
               <ProfileCard
                 title="Siri"
                 handle="@siri01"
